@@ -5,21 +5,15 @@ const bottomSection = document.querySelector('.bottom-section')
 
 let taskArray = [];
 
-
-
 const displayTask = () =>{
 
   // get all task from localStorage
-  const getTaskFromLocalStorage = JSON.parse(localStorage.getItem('allTask'));
+  // if no task in localStorage then set value to empty array
+  const getTaskFromLocalStorage = JSON.parse(localStorage.getItem('allTask')) || [];
 
   console.log('data from lc',getTaskFromLocalStorage)
 
-  // if no task in localStorage then set value to empty array
-  const getAllTask = getTaskFromLocalStorage || [];
-
-  console.log(getAllTask,'data stored in aaray')
-
-  bottomSection.innerHTML= getAllTask.map((task)=>(
+  bottomSection.innerHTML= getTaskFromLocalStorage.map((task)=>(
     `
       <div class="task">
         <h4>title: ${task.taskTitle}</h4>
@@ -31,7 +25,10 @@ const displayTask = () =>{
 }
 
 submitBtn.addEventListener('click',()=>{
-  const newTask = ({taskTitle:title.value,taskDesc:description.value});
+  const newTask = (
+    {taskTitle:title.value,taskDesc:description.value}
+  );
+  console.log(newTask)
 
   const fetchTaskFromLS = JSON.parse(localStorage.getItem("allTask"))
   // data is presented then store the data after that add new task
