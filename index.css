@@ -45,3 +45,14 @@ input:focus{
   background-color: transparent;
   cursor: pointer;
 }
+.task{
+  border: 1px solid;
+    font-size: 3rem;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+}
