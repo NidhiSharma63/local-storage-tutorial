@@ -1,0 +1,47 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main-section,
+.upper-section,
+.bottom-section{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.main-section{
+  margin-top: 30px;
+}
+.upper-section{
+  align-items: flex-end;
+  gap: 20px;
+  font-size: 30px;
+}
+input{
+  padding: 8px;
+  font-size: 20px;
+  border-radius: 7px;
+  margin-left: 10px;
+  border: 1px solid black;
+}
+input:focus{
+  outline: 1px solid green;
+  border: none;
+}
+.upper-section button{
+  font-size: 24px;
+  padding: 5px 31px;
+  background: blue;
+  border: 1px solid blue;
+  border-radius: 4px;
+  color: white;
+  transition: .3s;
+}
+.upper-section button:hover{
+  color: blue;
+  background-color: transparent;
+  cursor: pointer;
+}
